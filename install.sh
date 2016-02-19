@@ -79,49 +79,5 @@ else
     source ./scripts/kubuntu-config.sh
 fi
 
-# Install & upgrade all global python modules
-PYTHON_PACKAGES="autopep8
-bumpversion
-coverage
-httpie
-mccabe
-nose
-nose-progressive
-pep8
-pip
-pyflakes
-pygments
-pylint
-rope
-setuptools
-tox
-virtualenv
-virtualenvwrapper
-wheel"
-for p in $PYTHON_PACKAGES
-do
-    pip install --upgrade "$p"
-done
-
-# Patch terminal font for Vim's Airline plugin
-# See: https://powerline.readthedocs.org/en/latest/fontpatching.html
-mkdir ./powerline-fontpatcher
-curl -fsSL https://github.com/Lokaltog/powerline-fontpatcher/tarball/develop | tar -xvz --strip-components 1 --directory ./powerline-fontpatcher -f -
-fontforge -script ./powerline-fontpatcher/scripts/powerline-fontpatcher --no-rename ./assets/SourceCodePro-Regular.otf
-rm -rf ./powerline-fontpatcher
-# Install the patched font
-if $IS_OSX; then
-    mkdir -p ~/Library/Fonts/
-    mv ./Source\ Code\ Pro.otf ~/Library/Fonts/
-else
-    mkdir -p ~/.fonts/
-    mv ./Source\ Code\ Pro.otf ~/.fonts/
-    # Refresh font cache
-    sudo fc-cache -f -v
-fi
-
-# Force vim plugin upgrades
-vim +NeoBundleUpdate +q
-
 # Reload Bash with new configuration
 source ~/.bash_profile
