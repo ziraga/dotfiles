@@ -3,7 +3,7 @@ set -x
 
 # We need to distinguish sources and binary packages for Brew & Cask on OSX
 COMMON_PACKAGES="git-extras git openssl subversion zsh gdbm git-flow jpeg nvm zsh-syntax-highlighting"
-BIN_PACKAGES="vlc google-drive quicksilver smcfancontrol splashtop-personal splashtop-streamer intellij-idea vagrant vagrant-manager virtualbox kaleidoscope atom fenix firefox google-chrome gitup iterm2 betterzipql epubquicklook qlcolorcode qlmarkdown qlstephen quicklook-json webpquicklook openssh"
+BIN_PACKAGES="xtrafinder vlc google-drive quicksilver smcfancontrol splashtop-personal splashtop-streamer intellij-idea vagrant vagrant-manager virtualbox kaleidoscope atom fenix firefox google-chrome gitup iterm2 betterzipql epubquicklook qlcolorcode qlmarkdown qlstephen quicklook-json webpquicklook openssh"
 
 # Install command line tools
 xcode-select -p
@@ -26,6 +26,12 @@ fi
 # Update all OSX packages
 sudo softwareupdate -i -a
 
+# Istall oh-my-zshell
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+# Set zsh as default shell
+chsh -s $(which zsh)
+
+
 # Install Homebrew if not found
 brew --version 2>&1 >/dev/null
 if [[ $? -ne 0 ]]; then
@@ -34,6 +40,7 @@ if [[ $? -ne 0 ]]; then
     # Install Homebrew
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
+
 brew update
 brew upgrade --all
 # Include duplicates packages
@@ -41,7 +48,7 @@ brew tap homebrew/dupes
 # Install or upgrade Cask
 brew tap caskroom/cask
 
-
+# Install non-binary apps
 for PACKAGE in $COMMON_PACKAGES
 do
    brew install "$PACKAGE"
