@@ -2,8 +2,43 @@
 set -x
 
 # We need to distinguish sources and binary packages for Brew & Cask on OSX
-COMMON_PACKAGES="git-extras git openssl subversion zsh gdbm git-flow jpeg nvm zsh-syntax-highlighting"
-BIN_PACKAGES="xtrafinder vlc google-drive quicksilver smcfancontrol splashtop-personal splashtop-streamer intellij-idea vagrant vagrant-manager virtualbox kaleidoscope atom fenix firefox google-chrome gitup iterm2 betterzipql epubquicklook qlcolorcode qlmarkdown qlstephen quicklook-json webpquicklook openssh"
+COMMON_PACKAGES="git-extras
+git
+openssl
+subversion
+zsh
+gdbm
+git-flow
+jpeg
+nvm
+zsh-syntax-highlighting"
+
+BIN_PACKAGES="xtrafinder
+vlc
+google-drive
+quicksilver
+smcfancontrol
+splashtop-personal
+splashtop-streamer
+intellij-idea
+vagrant
+vagrant-manager
+virtualbox
+kaleidoscope
+atom
+fenix
+firefox
+google-chrome
+gitup
+iterm2
+betterzipql
+epubquicklook
+qlcolorcode
+qlmarkdown
+qlstephen
+quicklook-json
+webpquicklook
+openssh"
 
 # Install command line tools
 xcode-select -p
