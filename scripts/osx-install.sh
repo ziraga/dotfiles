@@ -61,11 +61,28 @@ fi
 # Update all OSX packages
 sudo softwareupdate -i -a
 
-# Istall oh-my-zshell
+#####################################
+# Install Binaries Not Using Homebrew
+#####################################
+
+# Install uBlock for Safari.
+defaults read ~/Library/Safari/Extensions/extensions | grep --quiet "net.gorhill.uBlock"
+if [[ $? -ne 0 ]]; then
+    curl -o "$TMPDIR/ublock-safari.safariextz" -O https://cloud.delosent.com/ublock-safari-0.9.5.2.safariextz
+    open "$TMPDIR/ublock-safari.safariextz"
+fi
+
+# Install oh-my-zshell
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 # Set zsh as default shell
 chsh -s $(which zsh)
 
+# install NPM
+curl -O -L https://npmjs.org/install.sh
+
+##################
+# Install Homebrew
+##################
 
 # Install Homebrew if not found
 brew --version 2>&1 >/dev/null
@@ -85,9 +102,9 @@ brew tap caskroom/cask
 
 # Install non-binary apps
 for PACKAGE in $COMMON_PACKAGES
-do
-   brew install "$PACKAGE"
-done
+    do
+       brew install "$PACKAGE"
+    done
 
 # htop-osx requires root privileges to correctly display all running processes.
 sudo chown root:wheel "$(brew --prefix)/bin/htop"
@@ -95,19 +112,11 @@ sudo chmod u+s "$(brew --prefix)/bin/htop"
 
 # Install binary apps
 for PACKAGE in $BIN_PACKAGES
-do
-   brew cask install --force "$PACKAGE"
-done
+    do
+       brew cask install --force "$PACKAGE"
+    done
 
 qlmanage -r
-
-
-# Install uBlock for Safari.
-defaults read ~/Library/Safari/Extensions/extensions | grep --quiet "net.gorhill.uBlock"
-if [[ $? -ne 0 ]]; then
-    curl -o "$TMPDIR/ublock-safari.safariextz" -O https://cloud.delosent.com/ublock-safari-0.9.5.2.safariextz
-    open "$TMPDIR/ublock-safari.safariextz"
-fi
 
 # Clean things up
 brew linkapps
