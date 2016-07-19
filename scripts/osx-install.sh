@@ -9,15 +9,17 @@ subversion
 zsh
 gdbm
 git-flow
+git-extras
 jpeg
 nvm
 zsh-syntax-highlighting"
 
-BIN_PACKAGES="xtrafinder
-vlc
+BIN_PACKAGES="vlc
+appcleaner
 google-drive
 quicksilver
 smcfancontrol
+epubquicklook
 splashtop-personal
 splashtop-streamer
 intellij-idea
@@ -27,17 +29,17 @@ virtualbox
 kaleidoscope
 atom
 fenix
+qlcolorcode
+webpquicklook
+franz
+quicklook-json
 firefox
 google-chrome
 gitup
-iterm2
-betterzipql
-epubquicklook
-qlcolorcode
 qlmarkdown
 qlstephen
-quicklook-json
-webpquicklook
+iterm2
+betterzipql
 openssh"
 
 # Install command line tools
