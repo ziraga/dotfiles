@@ -2,45 +2,55 @@
 set -x
 
 # We need to distinguish sources and binary packages for Brew & Cask on OSX
-COMMON_PACKAGES="git-extras
+COMMON_PACKAGES="
 git
-openssl
-subversion
+nvm
 zsh
 gdbm
+jpeg
+openssl
 git-flow
 git-extras
-jpeg
-nvm
-zsh-syntax-highlighting"
+git-extras
+subversion
+zsh-syntax-highlighting
+"
 
-BIN_PACKAGES="vlc
-appcleaner
-google-drive
-quicksilver
-smcfancontrol
-epubquicklook
-splashtop-personal
-splashtop-streamer
-intellij-idea
-vagrant
-vagrant-manager
-virtualbox
-kaleidoscope
+BIN_PACKAGES="
+vlc
+dash
 atom
 fenix
-qlcolorcode
-webpquicklook
 franz
-quicklook-json
-firefox
-google-chrome
-gitup
-qlmarkdown
-qlstephen
 iterm2
+vagrant
+firefox
+openssh
+qlstephen
+appcleaner
+virtualbox
+qlmarkdown
+quicksilver
+qlcolorcode
 betterzipql
-openssh"
+kaleidoscope
+google-drive
+smcfancontrol
+epubquicklook
+intellij-idea
+webpquicklook
+google-chrome
+quicklook-json
+vagrant-manager
+plex-media-server
+splashtop-personal
+splashtop-streamer
+android-file-transfer
+"
+
+ATOM_PACKAGES="
+sync-settings
+"
 
 # Install command line tools
 xcode-select -p
@@ -125,3 +135,9 @@ brew linkapps
 brew cleanup
 brew prune
 brew cask cleanup
+
+for PACKAGE in $ATOM_PACKAGES
+do
+   apm install "$PACKAGE"
+done
+
