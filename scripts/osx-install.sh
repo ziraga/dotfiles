@@ -22,6 +22,7 @@ dash
 atom
 fenix
 franz
+hosts
 iterm2
 vagrant
 firefox
@@ -137,7 +138,6 @@ brew prune
 brew cask cleanup
 
 for PACKAGE in $ATOM_PACKAGES
-do
-   apm install "$PACKAGE"
-done
-
+    do
+       apm install "$PACKAGE"
+    done
