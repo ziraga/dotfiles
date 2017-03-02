@@ -21,11 +21,13 @@ BIN_PACKAGES="
 vlc
 dash
 atom
+boom
 fenix
 franz
 hosts
 iterm2
 vagrant
+freeter
 firefox
 openssh
 qlstephen
