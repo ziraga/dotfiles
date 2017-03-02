@@ -22,7 +22,6 @@ alias root="cd ..."
 alias home="~"
 alias desk="cd ~/Desktop/"
 alias ..="cd ../"
-alias ...="cd ../../"
 alias remove='rm -rf'
 alias removeSvn="find . -type d -name '.svn' -print -exec rm -rf {} \;"
 alias restartTerminal='source ~/.zshrc'
