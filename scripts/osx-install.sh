@@ -7,13 +7,10 @@ git
 nvm
 zsh
 gdbm
-jpeg
 openssl
 git-flow
 git-extras
 git-extras
-subversion
-homebrew/php/php71
 zsh-syntax-highlighting
 "
 
