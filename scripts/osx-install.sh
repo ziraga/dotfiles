@@ -23,13 +23,14 @@ dash
 atom
 boom
 fenix
-franz
+station
 hosts
 iterm2
 vagrant
-freeter
 firefox
 openssh
+1password
+transmit
 qlstephen
 appcleaner
 virtualbox
@@ -49,11 +50,8 @@ vagrant-manager
 plex-media-server
 splashtop-personal
 splashtop-streamer
+visual-studio-code
 android-file-transfer
-"
-
-ATOM_PACKAGES="
-sync-settings
 "
 
 # Install command line tools
