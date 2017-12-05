@@ -17,7 +17,6 @@ zsh-syntax-highlighting
 BIN_PACKAGES="
 vlc
 dash
-atom
 boom
 fenix
 station
@@ -36,7 +35,6 @@ quicksilver
 qlcolorcode
 betterzipql
 kaleidoscope
-google-drive
 smcfancontrol
 epubquicklook
 intellij-idea
@@ -49,6 +47,7 @@ splashtop-personal
 splashtop-streamer
 visual-studio-code
 android-file-transfer
+google-backup-and-sync
 "
 
 # Install command line tools
