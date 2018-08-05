@@ -24,6 +24,7 @@ hosts
 iterm2
 vagrant
 firefox
+nordvpn
 openssh
 1password
 transmit
