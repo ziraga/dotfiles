@@ -32,6 +32,7 @@ qlstephen
 appcleaner
 virtualbox
 qlmarkdown
+processing
 quicksilver
 qlcolorcode
 betterzipql
